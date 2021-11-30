@@ -3,11 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: "development",
-    entry: './src/index.js',
-    externals: {
-        'react': 'React',
-    },
+    mode: 'development',
+    entry: path.join(__dirname, 'src', 'index.js') ,
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'bundle.js',
@@ -15,7 +12,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         liveReload: true,
-        port: 3000
+        port: 3100
     },
     resolve: {
         extensions: ["*", ".js", ".jsx"]
@@ -34,7 +31,8 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
+                    'postcss-loader'
                 ],
             },
             {
@@ -54,4 +52,4 @@ module.exports = {
             template: './dist/index.html',
         })
     ],
-}
+};

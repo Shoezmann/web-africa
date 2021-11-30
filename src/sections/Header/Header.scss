@@ -1,0 +1,17 @@
+.slide--one-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    & svg{
+        position: relative;
+        display: block;
+        width: calc(179% + 1.3px);
+        height: 500px;
+    }
+    & .shape-fill{
+        fill: #c3dd34;
+    }
+}
